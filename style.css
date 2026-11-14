@@ -1,0 +1,271 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1e272e;
+    color: #f5f6fa;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #2f3640;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #353b48;
+}
+
+.wallet {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    background: #1e272e;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+#balance {
+    color: #4cd137;
+}
+
+#refill-btn {
+    background-color: #00a8ff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+#refill-btn:hover {
+    background-color: #0097e6;
+}
+
+/* --- STADIO E VISUALE LATERALE ALTA --- */
+.stadium-view {
+    background-color: #1e272e;
+    border-radius: 8px;
+    border: 3px solid #353b48;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: inset 0 10px 20px rgba(0,0,0,0.6);
+}
+
+/* Spalti e Pubblico Finto */
+.stands {
+    height: 40px;
+    background: #404040;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid #2f3640;
+}
+
+.top-stands {
+    border-bottom: 3px solid #111;
+}
+
+.bottom-stands {
+    border-top: 3px solid #111;
+    border-bottom: none;
+}
+
+.crowd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 4px 10px;
+    align-content: center;
+    height: 100%;
+    opacity: 0.85;
+}
+
+/* Omini stilizzati del pubblico */
+.person {
+    width: 6px;
+    height: 12px;
+    border-radius: 3px 3px 0 0;
+    display: inline-block;
+}
+
+/* Pista da corsa */
+.track-container {
+    position: relative;
+    background-color: #27ae60;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    padding: 5px 0;
+}
+
+.lane {
+    position: relative;
+    height: 42px;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+}
+
+.lane:last-child {
+    border-bottom: none;
+}
+
+.lane-number {
+    position: absolute;
+    left: 8px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+}
+
+.finish-line {
+    position: absolute;
+    right: 60px;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: repeating-linear-gradient(
+        0deg,
+        #fff,
+        #fff 8px,
+        #000 8px,
+        #000 16px
+    );
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 0.55rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.horse {
+    position: absolute;
+    left: 10px;
+    width: 42px;
+    height: 28px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    z-index: 2;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+    transition: transform 0.1s linear;
+    font-size: 0.85rem;
+}
+
+.horse::after {
+    content: "🐎";
+    margin-left: 2px;
+    font-size: 0.95rem;
+}
+
+/* Banner Stato */
+.status-banner {
+    background-color: #353b48;
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-left: 5px solid #fbc531;
+}
+
+/* Pannello Scommesse */
+.betting-panel h2 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #1e272e;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+select, input {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #7f8fa6;
+    background: #2f3640;
+    color: white;
+    font-size: 1rem;
+}
+
+button.primary-btn {
+    background-color: #4cd137;
+    color: #1e272e;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button.primary-btn:disabled {
+    background-color: #7f8fa6;
+    cursor: not-allowed;
+}
+
+button.secondary-btn {
+    background-color: #fbc531;
+    color: #1e272e;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button.secondary-btn:disabled {
+    background-color: #7f8fa6;
+    cursor: not-allowed;
+}
+
+.horses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.horse-card {
+    background: #353b48;
+    padding: 10px 15px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 6px solid;
+}

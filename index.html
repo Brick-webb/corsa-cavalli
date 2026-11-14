@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ippodromo Virtuale - Corse dei Cavalli</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏇 Ippodromo Virtuale</h1>
+            <div class="wallet">
+                <span>Saldo: <strong id="balance">1000</strong> €</span>
+                <button id="refill-btn" title="Ricarica crediti infiniti">+1000 € Gratis</button>
+            </div>
+        </header>
+
+        <!-- Pista di gara con visuale laterale alta -->
+        <div class="stadium-view">
+            <!-- Spalti superiori / Pubblico -->
+            <div class="stands top-stands">
+                <div class="crowd" id="crowd-top"></div>
+            </div>
+
+            <div class="track-container" id="track">
+                <div class="finish-line">TRAGUARDO</div>
+                <!-- Le corsie verranno generate dinamicamente da JavaScript -->
+            </div>
+
+            <!-- Spalti inferiori / Tribuna principale -->
+            <div class="stands bottom-stands">
+                <div class="crowd" id="crowd-bottom"></div>
+            </div>
+        </div>
+
+        <!-- Messaggi di stato / Risultati -->
+        <div id="status-banner" class="status-banner">
+            Piazza la tua scommessa e clicca su "Via alla Gara!"
+        </div>
+
+        <!-- Pannello Scommesse -->
+        <div class="betting-panel">
+            <h2>Pannello Scommesse</h2>
+            <div class="controls">
+                <label for="horse-select">Scegli Cavallo:</label>
+                <select id="horse-select"></select>
+
+                <label for="bet-amount">Puntata (€):</label>
+                <input type="number" id="bet-amount" value="100" min="10" step="10">
+
+                <button id="start-btn" class="primary-btn">Via alla Gara!</button>
+                <button id="reset-btn" class="secondary-btn" disabled>Nuova Gara</button>
+            </div>
+
+            <!-- Tabella Cavalli e Quote -->
+            <div class="horses-grid" id="horses-info"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
